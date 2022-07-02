@@ -17,7 +17,7 @@ public class steepLogin {
 
     @When("el usuario ingresas sus credenciales validas")
     public void elUsuarioIngresasSusCredencialesValidas() {
-        Assert.assertTrue(true);
+        Assert.assertTrue(false);
     }
 
     @Then("ingresas sastifactoriamente al home")
