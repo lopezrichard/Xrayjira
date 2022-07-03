@@ -1,6 +1,6 @@
-Feature: TestCucumber
+Feature: ingreso con credenciales correctas
 
-	@TEST_QAA-14
+	@TEST_ER-6
   Scenario: ingreso con credenciales correctas
     Given que ingresas a la web
     When el usuario ingresas sus credenciales validas
