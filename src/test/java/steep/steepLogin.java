@@ -11,9 +11,9 @@ import org.testng.Assert;
  **/
 public class steepLogin {
     @Given("que ingresas a la web")
-    public void queIngresasALaWeb() {
-        Thread. sleep(5000) 
-        Assert.assertTrue(true);
+    public void queIngresasALaWeb() throws InterruptedException {
+        Thread.sleep(5000);
+        Assert.assertTrue(false);
     }
 
     @When("el usuario ingresas sus credenciales validas")
