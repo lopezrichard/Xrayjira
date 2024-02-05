@@ -8,18 +8,5 @@ Feature: ingreso con credenciales correctas
     Examples:
       |test|
       |    |
-      |    |
-      |    |
 
-
-  @TEST_ER-7
-  Scenario Outline: ingreso con credenciales correctass
-    Given que ingresas a la webb
-    When el usuario ingresas sus credenciales validass
-    Then ingresas sastifactoriamente al homee
-    Examples:
-      |test|
-      |    |
-      |    |
-      |    |
  
