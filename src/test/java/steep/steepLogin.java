@@ -1,5 +1,9 @@
 package steep;
 
+import Utils.Browser;
+import framework.web.Abilities.Close;
+import framework.web.Abilities.Open;
+import framework.web.Actions.Text;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,7 +16,7 @@ import org.testng.Assert;
  **/
 public class steepLogin {
     @Given("que ingresas a la web")
-    public void queIngresasALaWeb() throws InterruptedException {
+    public void queIngresasALaWeb() throws Exception {
         Assert.assertTrue(true);
     }
 

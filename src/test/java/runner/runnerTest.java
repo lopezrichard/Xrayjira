@@ -10,9 +10,9 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src/test/java/features",
         glue = "steep",
-        plugin = { "pretty",
-                "json:target/cucumber.json"
-        }
+        plugin = {"json:target/cucumber.json", "pretty"},
+        monochrome = true
+
 )
 public class runnerTest extends AbstractTestNGCucumberTests {
 }

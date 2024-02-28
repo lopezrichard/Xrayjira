@@ -2,9 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/Users/richard/IdeaProjects/testCucumber">
+        <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="runner.runnerTest">
-            </class>
+            <class name="runner.runnerTest"></class>
         </classes>
+
     </test>
 </suite>
