@@ -1,13 +1,8 @@
 package steep;
 
-import Utils.Browser;
-import framework.web.Abilities.Close;
-import framework.web.Abilities.Open;
-import framework.web.Actions.Text;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.qameta.allure.model.Status;
 import org.testng.Assert;
 
 /**
