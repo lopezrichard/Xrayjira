@@ -1,6 +1,6 @@
 Feature: ingreso con credenciales correctas
 
-	@ECO-3
+  @TEST_ECO-12
   Scenario Outline: ingreso con credenciales correctas
     Given que ingresas a la web
     When el usuario ingresas sus credenciales validas
