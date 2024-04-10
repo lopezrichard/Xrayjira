@@ -1,54 +1,66 @@
 package steep;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+
+import java.time.Duration;
+
+import static UI.FormularioUI.*;
+import static UI.FormularioUI.PERMANENT_ADDRESS;
 
 /**
  * Created by Richard Lopez on 03/06/2022
  * Visit Linkedin https://www.linkedin.com/in/richard-lopez-/
  **/
 public class steepLogin {
-    @Given("que ingresas a la web")
-    public void queIngresasALaWeb() throws Exception {
-        Assert.assertTrue(true);
-        Assert.assertTrue(false);
+    WebDriver driver;
+    @Before
+    public void setup(){
+      driver  = new ChromeDriver();
+      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+    }
+    @Given("que ingresa la pagina principal de la web")
+    public void queIngresaLaPaginaPrincipalDeLaWeb() {
+        driver.get("https://demoqa.com/text-box");
 
     }
 
-    @When("el usuario ingresas sus credenciales validas")
-    public void elUsuarioIngresasSusCredencialesValidas() {
-
-        Assert.assertTrue(true);
-        Assert.assertTrue(false);
-
+    @When("completa los datos de registro en el sistema {string} {string} {string} {string}")
+    public void completaLosDatosDeRegistroEnElSistema(String fullName, String email, String currentAddress, String permanentAddress) throws Exception {
+        driver.findElement(FULL_NAME).sendKeys(fullName);
+        driver.findElement(EMAIL).sendKeys(email);
+        driver.findElement(CURRENT_ADDRESS).sendKeys(currentAddress);
+        driver.findElement(PERMANENT_ADDRESS).sendKeys(permanentAddress);
     }
 
-    @Then("ingresas sastifactoriamente al home")
-    public void ingresasSastifactoriamenteAlHome() {
-        Assert.assertTrue(true);
-        Assert.assertTrue(false);
+    @Then("se visualiza los datos completados abajo del formulario {string}")
+    public void seVisualizaLosDatosCompletadosAbajoDelFormulario(String mensaje) {
+        Assert.assertEquals(mensaje,"sastifactorio","No se guardo sastifactoriamente los datos");
 
     }
-
-    @Given("que ingresas a la webb")
-    public void queIngresasALaWebb() throws InterruptedException {
-        Assert.assertTrue(false);
-
+    @After
+    public void after(){
+        driver.close();
     }
 
-    @When("el usuario ingresas sus credenciales validass")
-    public void elUsuarioIngresasSusCredencialesValidass() {
+    @Then("ingresa de manera sastifactoria")
+    public void ingresaDeManeraSastifactoria() {
         Assert.assertTrue(true);
-        Assert.assertTrue(false);
-
     }
 
-    @Then("ingresas sastifactoriamente al homee")
-    public void ingresasSastifactoriamenteAlHomee() {
-        Assert.assertTrue(true);
-        Assert.assertTrue(false);
+    @Given("que realiza el login en la web {string} {string}")
+    public void queRealizaElLoginEnLaWeb(String user, String password) {
+        driver.get("https://demoqa.com/login");
+        driver.findElement(USER_NAME).sendKeys(user);
+        driver.findElement(PASSWORD).sendKeys(password);
+        driver.findElement(LOGIN).click();
 
     }
 }
