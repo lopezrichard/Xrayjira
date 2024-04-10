@@ -2,13 +2,18 @@ package steep;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 
 import static UI.FormularioUI.*;
@@ -45,7 +50,11 @@ public class steepLogin {
 
     }
     @After
-    public void after(){
+    public void after(Scenario scenario){
+        Allure.addAttachment(
+                scenario.getName(),
+                new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES))
+        );
         driver.close();
     }
 
