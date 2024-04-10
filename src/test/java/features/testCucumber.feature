@@ -1,22 +1,20 @@
-@ECO-14
-Feature: Feature pruebas Richard
+@REQ_ECO-17
+Feature: TEST STORY
 
-  @TEST_ECO-15
-  Scenario Outline: Prueba 1
+  @TEST_ECO-18
+  Scenario Outline: Test TEST STORY 1
     Given que ingresas a la web
     When el usuario ingresas sus credenciales validas
     Then ingresas sastifactoriamente al home
-
     Examples:
       | test1 |
       | test1 |
 
-  @TEST_ECO-16
-  Scenario Outline: Prueba 2
+  @TEST_ECO-19
+  Scenario Outline: Test TEST STORY 2
     Given que ingresas a la web
     When el usuario ingresas sus credenciales validas
     Then ingresas sastifactoriamente al home
-
     Examples:
       | test2 |
       | test2 |
