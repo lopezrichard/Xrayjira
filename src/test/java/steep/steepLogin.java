@@ -59,7 +59,6 @@ public class steepLogin {
         driver.get("https://demoqa.com/login");
         driver.findElement(USER_NAME).sendKeys(user);
         driver.findElement(PASSWORD).sendKeys(password);
-        driver.findElement(LOGIN).click();
 
     }
 }
