@@ -27,7 +27,7 @@ public class steepLogin {
 
     @Given("que ingresas a la webb")
     public void queIngresasALaWebb() throws InterruptedException {
-        Assert.assertTrue(true);
+        Assert.assertTrue(false);
 
     }
 
